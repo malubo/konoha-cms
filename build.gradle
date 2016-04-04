@@ -6,18 +6,25 @@ buildscript {
 		mavenCentral()
 	}
 	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
+		classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
 	}
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'spring-boot' 
+apply plugin: 'spring-boot'
+apply plugin: 'war'
 
 jar {
-	baseName = 'demo'
+	baseName = 'konoha-cms'
 	version = '0.0.1-SNAPSHOT'
 }
+
+war {
+	baseName = 'konoha-cms'
+	version = '0.0.1-SNAPSHOT'
+}
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
@@ -26,8 +33,8 @@ repositories {
 }
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-thymeleaf:1.3.3.RELEASE')
-	testCompile('org.springframework.boot:spring-boot-starter-test:1.3.3.RELEASE')
+	compile "org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}"
+	testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
 }
 
 eclipse {
