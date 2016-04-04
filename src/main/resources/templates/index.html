@@ -3,10 +3,13 @@
 <head>
     <title>Spring Boot and Thymeleaf example</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <object th:include="fragments/header :: header" th:remove="tag" />
 </head>
 <body>
 <h3>Spring Boot and Thymeleaf</h3>
 <p>Hello World!</p>
 <span th:utext="${employee}">Description</span>
+<div th:replace="fragments/footer :: footer">&copy; 2013 The Static Templates</div>
+<object th:include="fragments/header :: scripts" th:remove="tag" />
 </body>
 </html>
